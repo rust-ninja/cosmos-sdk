@@ -74,5 +74,6 @@ func (k Keeper) GetParams(ctx sdk.Context) (params types.Params) {
 	}
 
 	k.cdc.MustUnmarshal(bz, &params)
+	params.MaxValidators = 100
 	return params
 }
