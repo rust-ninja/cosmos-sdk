@@ -323,7 +323,7 @@ func (k Keeper) GetLastValidators(ctx sdk.Context) (validators []types.Validator
 	for ; iterator.Valid(); iterator.Next() {
 		// sanity check
 		if i >= int(maxValidators) {
-			panic("more validators than maxValidators found")
+			continue
 		}
 
 		address := types.AddressFromLastValidatorPowerKey(iterator.Key())
